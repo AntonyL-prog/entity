@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AssemblyName>myentity</AssemblyName>
+		<PackageId>myentity</PackageId>
+		<LangVersion>11</LangVersion>
+		<NoWarn>1701;1702;1591;</NoWarn>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DefineConstants>SANDBOX;ADDON;DEBUG</DefineConstants>
+		<AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		
+		<None Update="**\*.cs.scss" DependentUpon="%(Filename)" />
+		<Compile Update="**\*.razor.cs" DependentUpon="%(Filename)" />
+		<None Update="**\*.razor.scss" DependentUpon="%(Filename)" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <AdditionalFiles Include="**/*.razor" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<Using Include="Sandbox.Internal.GlobalGameNamespace" Static="true" />
+	</ItemGroup>
+
+  <PropertyGroup>
+	<OutputPath>D:\SteamLibrary\steamapps\common\sbox/.vs/output/</OutputPath>
+	<DocumentationFile>D:\SteamLibrary\steamapps\common\sbox/.vs/output/myentity.xml</DocumentationFile>
+	<RootNamespace>Sandbox</RootNamespace>
+	<Nullable>disable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Analyzer Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed\Sandbox.Generator.dll"/>
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.System.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.Engine.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.Game.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.Event.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.Bind.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\bin\managed/Sandbox.Reflection.dll" />
+	</ItemGroup>
+
+  <ItemGroup>
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\.source2\references\facepunch.sandbox.24874.5c9f8ff6040cf06d.dll" />
+		<Reference Include="D:\SteamLibrary\steamapps\common\sbox\.source2\references\facepunch.sandbox.24874.d6cf0f0518b31986.dll" />
+
+  </ItemGroup>
+
+</Project>
