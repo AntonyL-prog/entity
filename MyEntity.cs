@@ -1,4 +1,4 @@
-﻿using Sandbox;
+using Sandbox;
 using Editor;
 using System;
 using System.Collections.Generic;
@@ -40,16 +40,27 @@ internal class MyEntity : AnimatedEntity, IUse
     {
         var entity = new MyEntity();
         entity.Spawn();
+        //Vector3(0,0,0);
     }
     //Si l'entité est utilisé(dans cas la "E" je retourne true et j'affiche mon contenue
     public bool OnUse(Entity user)
     {
         Log.Info("Hello");
-        Test();
+        var position = base.Position;
+        MyEntity entité = new MyEntity();
+        entité.SetModel("models/sbox_props/watermelon/watermelon.vmdl_c");
+        entité.SetupPhysicsFromModel(PhysicsMotionType.Dynamic);
+        entité.Position = position;
         return true;
     }
     public bool IsUsable(Entity user)
     {
         return true;
     }
+    //public static void Vector3(float x , float y, float z)
+   // {
+   //     MyEntity.Position = MyEntity.Position + (Vector3.up * 100);
+   // }
+
+
 }
