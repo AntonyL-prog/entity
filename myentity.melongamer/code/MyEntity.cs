@@ -31,7 +31,6 @@ internal class MyEntity : AnimatedEntity, IUse
         Log.Info($"Melon Spawned");
         SetModel("models/sbox_props/watermelon/watermelon.vmdl_c");
         SetupPhysicsFromModel(PhysicsMotionType.Dynamic);
-        Particles.Create("particles/explosion.vpcf");
     }
     //Fonction de l'API pour que quand j'écris Melon dans la console, je fais apparaitre mon melon
     [ConCmd.Admin("Melon")]
