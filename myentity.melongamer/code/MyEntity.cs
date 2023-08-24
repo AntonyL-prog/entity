@@ -28,7 +28,7 @@ internal class MyEntity : AnimatedEntity, IUse
         // Always network this entity to all clients
         Transmit = TransmitType.Always;
         Log.Info($"Melon Spawned");
-        SetModel("models/sbox_props/watermelon/watermelon.vmdl_c");
+        SetModel("models/citizen_props/beachball.vmdl_c");
         SetupPhysicsFromModel(PhysicsMotionType.Dynamic);
     }
     //For Admin if they want to spawn it manually
@@ -46,7 +46,7 @@ internal class MyEntity : AnimatedEntity, IUse
 
         var position = base.Position;
         MyEntity entité = new MyEntity();
-        entité.SetModel("models/sbox_props/watermelon/watermelon.vmdl_c");
+        entité.SetModel("models/citizen_props/beachball.vmdl_c");
         entité.SetupPhysicsFromModel(PhysicsMotionType.Dynamic);
         var steamid = 76561198049395102;
         Message("Melon", "Spawned", steamid);
